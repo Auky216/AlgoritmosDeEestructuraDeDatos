@@ -1,0 +1,3 @@
+C:/Users/Familia/Desktop/Algoritmos 2024-1/Algoritmos/cmake-build-debug/CMakeFiles/Algoritmos.dir
+C:/Users/Familia/Desktop/Algoritmos 2024-1/Algoritmos/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Familia/Desktop/Algoritmos 2024-1/Algoritmos/cmake-build-debug/CMakeFiles/rebuild_cache.dir
