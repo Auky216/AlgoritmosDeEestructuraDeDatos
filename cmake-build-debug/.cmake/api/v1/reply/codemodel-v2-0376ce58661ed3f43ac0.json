@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.25"
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Algoritmos::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Algoritmos-Debug-ff300796b50bff4339e8.json",
+					"jsonFile" : "target-Algoritmos-Debug-8172f4c53f5c364cc977.json",
 					"name" : "Algoritmos",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Familia/Desktop/Algoritmos 2024-1/Algoritmos/cmake-build-debug",
-		"source" : "C:/Users/Familia/Desktop/Algoritmos 2024-1/Algoritmos"
+		"build" : "/home/adrian/proyects/AlgoritmosDeEestructuraDeDatos/cmake-build-debug",
+		"source" : "/home/adrian/proyects/AlgoritmosDeEestructuraDeDatos"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 4
+		"minor" : 6
 	}
 }
