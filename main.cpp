@@ -1,16 +1,19 @@
-#include "BinarySearchTree.h"
+#include "AVL.h"
 
 int main(){
-    BST<int> tree;
+    AVL<int> tree;
 
     tree.insert(10);
-    tree.insert(20);
-    tree.insert(30);
-    tree.insert(40);
-    tree.insert(35);
-    tree.insert(42);
+    tree.insert(5);
+    tree.insert(4);
+    tree.insert(6);
 
     cout<<tree.getPostOrder()<<endl;
     cout<<tree.height()<<endl;
-    cout<<tree.size()<<endl;
+
+    tree.remove(6);
+    cout<<tree.height()<<endl;
+
+
+
 }
