@@ -55,13 +55,141 @@ public:
         return size(head);
     }
 
+    T succesor(T value){
+        return succesor(head,value);
+    }
+
+    T predecessor(T value){
+        return predecessor(head,value);
+    }
+
+    void remove(T value){
+        remove(head,value);
+    }
+
 
 private:
+
+    Node* maxNode(Node* node){
+        if(node->right == nullptr) {
+            return node;
+        }
+
+        return maxNode(node->right);
+    }
+    Node* predecessorNode(Node* node, T value){
+        if(node == nullptr){
+            return nullptr;
+        }
+
+        if(value == node->data){
+            if(node->left != nullptr){
+                return maxNode(node->left);
+            }
+        }
+
+        if(value > node->data){
+            return predecessorNode(node->right,value);
+        }
+
+        if(value < node->data){
+            return predecessorNode(node->left,value);
+        }
+    }
+
+    void remove(Node* &node,T value){
+
+        if(node == nullptr){
+            return;
+        }
+
+        if(value > node->data){
+            remove(node->right,value);
+        }
+
+        if(value < node->data){
+            remove(node->left,value);
+        }
+
+        if(value == node->data){
+            if(node->left == nullptr && node->right == nullptr){
+                delete node;
+                node = nullptr;
+            }
+
+            else if(node->left == nullptr){
+                Node* temp = node;
+                node = node->right;
+                delete temp;
+            }
+
+            else if(node->right == nullptr){
+                Node* temp = node;
+                node = node->left;
+                delete temp;
+            }
+
+            else{
+                Node* temp = maxNode(node->left);
+                node->data = temp->data;
+                remove(node->left,temp->data);
+            }
+        }
+
+
+
+
+    }
+
+    T succesor(Node* node, T value){
+        if(node == nullptr){
+            return -1;
+        }
+
+        if(node->data == value){
+            if(node->right != nullptr){
+                return minValue(node->right);
+            }
+        }
+
+        if(value > node->data){
+            return succesor(node->right,value);
+        }
+
+        if(value < node->data){
+            return succesor(node->left,value);
+        }
+
+        return -1;
+    }
+
+    T predecessor(Node* node,T value){
+        if(node == nullptr){
+            return -1;
+        }
+
+        if(node->data == value){
+            if(node->left != nullptr){
+                return maxValue(node->left);
+            }
+        }
+
+        if(value > node->data){
+            return predecessor(node->right,value);
+        }
+
+        if(value < node->data){
+            return predecessor(node->left,value);
+        }
+
+        return -1;
+    }
+
+
     int size(Node* node){
         if(node == nullptr){
             return 0;
         }
-
         return 1 + size(node->left) + size(node->right);
     }
 
@@ -95,6 +223,7 @@ private:
 
         if(value > node->data){
             return find(node->right,value);
+
         }
 
         if(value < node->data){
