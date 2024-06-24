@@ -1,17 +1,18 @@
-#include "AdyacencyMatrixGraph.h"
+#include "DisjointSet.h"
 
 int main() {
-    AdyacencyMatrixGraph<int> g(5);
+    int n = 10; // Número de elementos en el conjunto disjunto
+    DisjoinSet ds(n);
 
-    g.addEdge(0, 1);
-    g.addEdge(0, 4);
-    g.addEdge(1, 2);
-    g.addEdge(1, 3);
-    g.addEdge(1, 4);
-    g.addEdge(2, 3);
-    g.addEdge(3, 4);
+    // Unimos algunos elementos
+    ds.Union(1, 2);
+    ds.Union(3, 4);
+    ds.Union(2, 3);
 
-    g.displayGraph();
+    // Imprimimos el representante de cada conjunto
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Elemento: " << i << ", Conjunto Representativo: " << ds.Find(i) << std::endl;
+    }
 
     return 0;
 }
